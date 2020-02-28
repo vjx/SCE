@@ -1,0 +1,67 @@
+#N canvas 605 253 450 300 10;
+#X obj 18 42 PEDAL;
+#X obj 18 63 nbx 4 36 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 35
+-262144 -1 -1 147 256;
+#X obj 15 159 TOC-TOC;
+#X obj 15 142 tgl 15 0 empty toc-toc-set empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 321 19 vradio 35 1 0 5 som-set empty empty 0 -8 0 10 -262144
+-1 -1 4;
+#X obj 15 205 POING;
+#X obj 15 188 tgl 15 0 empty poing-set empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 15 251 VENTO;
+#X obj 15 234 tgl 15 0 empty vento-set empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 83 159 NIMBUS;
+#X obj 83 142 tgl 15 0 empty nimbus-set empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 83 206 TRANSPORTER;
+#X obj 83 188 tgl 15 0 empty transporter-set empty 17 7 0 10 -262144
+-1 -1 1 1;
+#X text 359 28 TOC-TOC;
+#X text 359 62 POING;
+#X text 359 96 VENTO;
+#X text 359 132 NIMBUS;
+#X text 359 169 TRANSPORTER;
+#N canvas 1 81 450 300 Mixer 0;
+#X obj 118 31 catch~ som;
+#X obj 127 246 s~ SomOut;
+#X obj 163 143 limiter~;
+#X obj 114 148 z~ 64;
+#X obj 127 203 *~;
+#X obj 267 220 env~ 128;
+#X obj 300 275 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 267 243 - 100;
+#X floatatom 191 78 5 0 0 0 - - -;
+#X floatatom 42 264 5 0 0 0 - - -;
+#X obj 34 233 snapshot~;
+#X obj 32 158 metro 100;
+#X obj 43 118 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 54 *~ 2.5;
+#X connect 0 0 13 0;
+#X connect 2 0 4 1;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 13 1;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 3 0;
+#X connect 13 0 2 0;
+#X restore 96 258 pd Mixer;
+#X obj 188 75 output~;
+#X obj 188 41 r~ SomOut;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 6 0 5 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 0;
+#X connect 12 0 11 0;
+#X connect 20 0 19 0;
+#X connect 20 0 19 1;

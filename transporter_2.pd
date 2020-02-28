@@ -66,6 +66,11 @@
 #X floatatom 335 -90 5 0 0 0 - - -;
 #X obj 326 -286 r pedal;
 #X obj 326 -263 / 127;
+#X obj 10 603 env~ 16384 8192;
+#X floatatom 10 626 5 0 0 0 - - -;
+#X floatatom 401 498 5 0 0 0 - - -;
+#X obj 130 600 env~ 16384 8192;
+#X floatatom 130 623 5 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 0 0 27 1;
 #X connect 1 0 2 0;
@@ -127,7 +132,9 @@
 #X connect 27 0 39 0;
 #X connect 28 0 39 0;
 #X connect 29 0 10 0;
+#X connect 29 0 65 0;
 #X connect 29 1 10 1;
+#X connect 29 1 68 0;
 #X connect 30 0 33 0;
 #X connect 31 0 33 0;
 #X connect 32 0 33 0;
@@ -168,3 +175,6 @@
 #X connect 61 0 60 0;
 #X connect 63 0 64 0;
 #X connect 64 0 61 0;
+#X connect 65 0 66 0;
+#X connect 67 0 39 1;
+#X connect 68 0 69 0;
